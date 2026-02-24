@@ -1,6 +1,40 @@
-# to exclude Obsidian's settings (including plugin and hotkey configurations)
-.obsidian/
+# ============================================
+# Obsidian 协作共享配置
+# ============================================
 
-# Add below lines to exclude OS settings and caches
-.trash/
+# 系统文件
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+
+# Obsidian 缓存
+.trash/
+
+# ============================================
+# 敏感插件配置 (包含 API Keys)
+# ============================================
+# Copilot 插件包含多个 API 密钥，必须完全排除
+.obsidian/plugins/copilot/
+
+# 其他可能包含敏感信息的插件
+.obsidian/plugins/obsidian-git/
+
+# ============================================
+# 个人设置 (不同设备/用户不需要共享)
+# ============================================
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/hotkeys.json
+.obsidian/appearance.json
+
+# ============================================
+# 保留的配置 (协作所需)
+# ============================================
+# 保留社区插件列表，让协作者知道需要安装哪些插件
+# .obsidian/community-plugins.json
+# 保留核心插件配置
+# .obsidian/core-plugins.json
