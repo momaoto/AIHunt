@@ -25,23 +25,33 @@
 
 # 类似的产品分析
 
-TopLogger
+## TopLogger
 https://toplogger.nu/en
 特点：成熟产品，室内路线记录、进度与排行、路线更新提醒；偏“打卡 + 进度”
 
-ClimbPin
+## ClimbPin
 xhs
 特点：攀岩难度记录，高度与心率（健康），进步反馈
 
-磕线
-好爬 HOP
+## 磕线
+## 好爬 HOP
 
-Mountain Project
+## Mountain Project
 https://www.mountainproject.com/
 特点：主要是野攀线路记载，天气预测，线路评论
 
-thecrag.com
+## thecrag.com
 特点：同样的野攀路线记录为主。
+
+## climbing.ai
+https://climbing.ai/
+这个参考意义很大，就是我想实现的效果。
+
+
+> [!NOTE] youtube评论节选
+> 我觉得这个演示最大的不足之处在于，它没有展示如何利用一位攀岩者的视频，预测一位体型截然不同的攀岩者攀爬同一条路线的效果。 或许是我没理解这个工具的用途，但我原本以为这个演示会是这样的：“录制一位高个攀岩者攀爬的视频，然后让身材矮小的攀岩者观看AI预测自己如何完成同样的攀爬。”
+
+
 
 ## xhs上一些关于攀岩社区app的讨论
 - 独立社区不看好，社区需要海量用户启动，小众需求难以从xhs这种地方引流
