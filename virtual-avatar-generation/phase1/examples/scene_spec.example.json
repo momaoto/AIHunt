@@ -1,0 +1,15 @@
+{
+  "image_path": "phase1/examples/wall.jpg",
+  "holds": [
+    {"id": "h1", "x": 180, "y": 560, "radius": 22},
+    {"id": "h2", "x": 300, "y": 480, "radius": 22},
+    {"id": "h3", "x": 220, "y": 390, "radius": 22},
+    {"id": "h4", "x": 360, "y": 300, "radius": 22},
+    {"id": "h5", "x": 260, "y": 190, "radius": 22}
+  ],
+  "start_hold": "h1",
+  "target_hold": "h5",
+  "frame_count": 120,
+  "fps": 24
+}
+
