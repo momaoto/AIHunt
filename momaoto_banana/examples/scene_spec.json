@@ -1,0 +1,16 @@
+﻿{
+  "image_path": "examples/wall.jpg",
+  "wall_height": 720,
+  "wall_width": 512,
+  "holds": [
+    {"id": "h1", "x": 180, "y": 610, "radius": 20, "role": "start"},
+    {"id": "h2", "x": 280, "y": 535, "radius": 20},
+    {"id": "h3", "x": 210, "y": 455, "radius": 20},
+    {"id": "h4", "x": 330, "y": 360, "radius": 20},
+    {"id": "h5", "x": 260, "y": 255, "radius": 20, "role": "target"}
+  ],
+  "start_hold": "h1",
+  "target_hold": "h5",
+  "frame_count": 144,
+  "fps": 24
+}
