@@ -2,7 +2,7 @@
 
 AIHunt is a fresh implementation track for climbing-scene-to-avatar generation.
 
-The legacy paper code lives under [virtual-avatar-generation](./virtual-avatar-generation) and is treated as reference material only. New development happens in the `aihunt/` package.
+The legacy paper code lives under [../virtual-avatar-generation](../virtual-avatar-generation) and is treated as reference material only. New development happens inside this `momaoto_banana/` project.
 
 ## Phase 1
 
@@ -13,7 +13,14 @@ Phase 1 builds a controllable MVP:
 3. synthesize a lightweight skeleton animation
 4. render a demo video
 
-This is intentionally simple. The goal is to lock down the data model and module boundaries before adding learned components.
+This stage is intentionally simple. The goal is to lock down the data model and module boundaries before adding learned components.
+
+## Current Scope
+
+- validated JSON scene input
+- heuristic upward route planner
+- smoothed 2D skeleton animation
+- OpenCV video rendering with synthetic fallback background
 
 ## Layout
 
@@ -37,4 +44,9 @@ docs/
 python -m aihunt.cli --scene examples/scene_spec.json --output outputs/demo.mp4
 ```
 
-This command is not assumed to work yet on your machine; the code is being staged before environment setup.
+## Next Phase 1 Tasks
+
+- replace the planner with hold graph search
+- allow manual route annotations
+- improve body proportions and contact timing
+- add tests for scene loading and route validity

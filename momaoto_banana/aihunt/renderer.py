@@ -10,15 +10,12 @@ from .models import SceneSpec, SkeletonFrame
 
 def _fallback_background(scene: SceneSpec) -> np.ndarray:
     canvas = np.full((scene.wall_height, scene.wall_width, 3), 238, dtype=np.uint8)
-    cv2.putText(
-        canvas,
-        "AIHunt Phase 1",
-        (20, 36),
-        cv2.FONT_HERSHEY_SIMPLEX,
-        0.9,
-        (70, 70, 70),
-        2,
-    )
+    for y in range(80, scene.wall_height, 120):
+        cv2.line(canvas, (0, y), (scene.wall_width, y), (220, 220, 220), 1)
+    for x in range(64, scene.wall_width, 96):
+        cv2.line(canvas, (x, 0), (x, scene.wall_height), (225, 225, 225), 1)
+    cv2.putText(canvas, "AIHunt Phase 1", (20, 36), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (70, 70, 70), 2)
+    cv2.putText(canvas, "Synthetic wall background", (20, 64), cv2.FONT_HERSHEY_SIMPLEX, 0.55, (90, 90, 90), 1)
     return canvas
 
 
@@ -42,7 +39,7 @@ def render_video(scene: SceneSpec, frames: list[SkeletonFrame], output_path: str
         ("hip", "right_foot"),
     ]
 
-    for skeleton in frames:
+    for frame_index, skeleton in enumerate(frames):
         frame = background.copy()
         for hold in scene.holds:
             center = (int(hold.x), int(hold.y))
@@ -65,6 +62,7 @@ def render_video(scene: SceneSpec, frames: list[SkeletonFrame], output_path: str
         ]:
             cv2.circle(frame, (int(point[0]), int(point[1])), 5, (30, 220, 30), -1)
 
+        cv2.putText(frame, f"frame {frame_index + 1}/{len(frames)}", (16, height - 18), cv2.FONT_HERSHEY_SIMPLEX, 0.55, (50, 50, 50), 1)
         writer.write(frame)
 
     writer.release()

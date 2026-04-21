@@ -9,7 +9,7 @@ from .models import Hold, SceneSpec
 def load_scene_spec(path: str | Path) -> SceneSpec:
     payload = json.loads(Path(path).read_text(encoding="utf-8"))
     holds = [Hold(**item) for item in payload["holds"]]
-    return SceneSpec(
+    scene = SceneSpec(
         image_path=Path(payload["image_path"]),
         holds=holds,
         start_hold=payload["start_hold"],
@@ -19,3 +19,5 @@ def load_scene_spec(path: str | Path) -> SceneSpec:
         wall_height=payload.get("wall_height", 720),
         wall_width=payload.get("wall_width", 512),
     )
+    scene.validate()
+    return scene
